@@ -1,0 +1,22 @@
+const d = n => {
+    let f = [], s;
+    for (let i = 1; i < n; i++) {
+        if (n % i === 0) {
+            f.push(i);
+        }
+    }
+    s = f.reduce((i, n) => i + n, 0);
+    return s;
+}
+
+let r = [], s;
+for (let i = 1; i < 10000; i ++) {
+    let a = d(i); 
+    let b = d(a); 
+
+    if (b == i &&  b != a) {
+        r.push(a);
+    }
+}
+
+s = r.reduce((i, n) => i + n, 0);
