@@ -1,0 +1,10 @@
+const big = require('big-integer');
+
+let a = big(1), b = big(0), c = big(0), i = 2;
+
+while (c.toString().length < 1000) {
+    c = a.add(b);
+    b = a;
+    a = c;
+    i++;
+}
