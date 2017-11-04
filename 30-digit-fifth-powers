@@ -1,0 +1,14 @@
+let s = 0, p = 5;
+const d = (n, p) => {
+    let s = 0;
+    n.toString().split('').map(e => {
+        e = parseInt(e);
+        s += Math.pow(e, p);
+    });
+    return s;
+}
+for (let i = 1; i < (p + 1) * Math.pow(9, p); i++) {
+    if (i != 1 && i == d(i, p)) {
+        s += i;
+    }
+}
