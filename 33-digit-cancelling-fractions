@@ -1,0 +1,24 @@
+let f, x, y, o = [];
+for (let i = 10; i <= 99; i++) {
+    for (let j = 10; j < i; j++) {
+        f = j / i;
+
+        x = j.toString().split('');
+        y = i.toString().split('');
+
+        if (x[1] != 0 && y[1] != 0 && x[0] != x[1]) {
+            if (x[1] == y[1] && x[0] / y[0] == f) {
+                o.push([x[0], y[0]]);
+            }
+            if (x[0] == y[1] && x[1] / y[0] == f) {
+                o.push([x[1], y[0]]);
+            }
+            if (x[1] == y[0] && x[0] / y[1] == f) {
+                o.push([x[0], y[1]]);
+            }
+            if (x[0] == y[0] && x[1] / y[1] == f) {
+                o.push([x[1], y[1]]);
+            }
+        }
+    }   
+}
