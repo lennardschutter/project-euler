@@ -1,0 +1,14 @@
+let s, r, o = [];
+
+for (let i = 1; i <= 9999; i++) {
+    for (let j = 1; j < 99; j++) {
+        s = '' + i + j + i*j;
+        s = s.split('').sort((a,b) => a >= b ? 1 : -1).join('');
+        
+        if (s == '123456789' && o.indexOf(i*j) === -1) {
+            o.push(i*j);
+        }
+    }
+}
+
+r = o.reduce((s, v) => s + v, 0);
