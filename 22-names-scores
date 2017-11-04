@@ -1,0 +1,14 @@
+let names = [], alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', values = {}, total = 0;
+alphabet.split('').map((l, i) => {
+    values[l] = i+1;
+});
+
+names.sort((a, b) => a == b ? 0 : a >= b ? 1 : -1);
+names.map((n, i) => {
+    let v = 0;
+    n.split('').map(l => {
+        v += values[l];
+    });
+
+    total += v * (i+1);
+});
