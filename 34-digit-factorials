@@ -1,0 +1,19 @@
+const f = n => n > 1 ? n * f(n-1) : 1;
+
+let t = 0;
+let l = {};
+
+for (let i = 0; i <= 9; i++) {
+    l[i] = f(i);
+}
+
+for (let i = 10; i <= f(9); i++) {
+    let s = 0;
+    i.toString().split('').map(n => {
+        s += l[n];
+    });
+
+    if (i == s) {
+        t += i;
+    }
+}
